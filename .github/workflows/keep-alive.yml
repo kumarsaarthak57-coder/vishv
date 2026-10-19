@@ -1,0 +1,15 @@
+name: Keep Render App Alive
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl Render URL
+        run: |
+          curl -I "https://vishv.onrender.com"
+        
